@@ -36,14 +36,14 @@ file and update those URLs.
 
 ## Regenerating image assets
 
-From the source logo (`websmith-logo.png`, 1254×1254):
+From the source render kept at the repo root (`websmith-logo-source.png`, 1254×1254):
 
 ```bash
-magick websmith-logo.png -resize 900x900 -strip -quality 84 assets/websmith-logo.webp
-magick websmith-logo.png -resize 900x900 -strip -quality 82 assets/websmith-logo.jpg
-magick websmith-logo.png -resize 1100x1100 -background black -gravity center \
+magick websmith-logo-source.png -resize 900x900 -strip -quality 84 assets/websmith-logo.webp
+magick websmith-logo-source.png -resize 900x900 -strip -quality 82 assets/websmith-logo.jpg
+magick websmith-logo-source.png -resize 1100x1100 -background black -gravity center \
   -extent 1200x630 -strip -quality 82 assets/og-card.jpg
-magick websmith-logo.png -crop 1020x720+180+180 +repage -background black \
+magick websmith-logo-source.png -crop 1020x720+180+180 +repage -background black \
   -gravity center -extent 1020x1020 -resize 180x180 -strip assets/apple-touch-icon.png
 magick assets/apple-touch-icon.png -resize 32x32 -strip assets/favicon.png
 ```
