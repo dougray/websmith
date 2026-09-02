@@ -26,9 +26,9 @@ assets/
 Open `index.html` and edit the text directly. Commit to `main` and GitHub Pages
 redeploys within a minute or two.
 
-The email address appears in four places — both call-to-action buttons, the
-plain-text link under the contact button, the footer, and the JSON-LD block near
-the top of the file. Update all of them together.
+The contact address (`dugcanlift@gmail.com`) appears in five places — both
+call-to-action buttons, the plain-text link under the contact button, the footer,
+and the JSON-LD block near the top of the file. Update all of them together.
 
 The absolute URLs in the `og:` meta tags and the JSON-LD assume
 `dougray.github.io/websmith/`. If a custom domain is added later, add a `CNAME`
