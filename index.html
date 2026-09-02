@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Websmith &mdash; Digital Presence &amp; Defense for Small Organizations</title>
-<meta name="description" content="Websmith serves small business and non-profits with digital presence and defense: hand-built websites you own, plus the practical security work that keeps them safe.">
+<meta name="description" content="Websmith serves small business and non-profits with digital presence and defense: hand-built websites you own, Discord servers built and managed, and the practical security work that keeps them safe.">
 <meta name="theme-color" content="#000000">
 
 <link rel="icon" href="assets/favicon.png" sizes="32x32" type="image/png">
@@ -29,7 +29,7 @@
   "name": "Websmith",
   "description": "Web development and practical security for small businesses and non-profits.",
   "url": "https://dougray.github.io/websmith/",
-  "email": "doug.l.copeland@gmail.com",
+  "email": "dugcanlift@gmail.com",
   "image": "https://dougray.github.io/websmith/assets/og-card.jpg",
   "areaServed": "US",
   "knowsAbout": [
@@ -37,6 +37,7 @@
     "Domain and DNS configuration",
     "Email authentication (SPF, DKIM, DMARC)",
     "Website security hardening",
+    "Discord server design, moderation, and management",
     "Small business and non-profit technology"
   ],
   "sameAs": ["https://github.com/dougray"]
@@ -111,6 +112,12 @@
   .top nav a { color: var(--muted); text-decoration: none; }
   .top nav a:hover { color: var(--ink); }
   @media (max-width: 560px) { .top nav { gap: 1rem; font-size: .82rem; } }
+  /* Four nav items just clear 360px; below that let the bar stack rather than clip. */
+  @media (max-width: 400px) {
+    .top .wrap { flex-wrap: wrap; justify-content: center; gap: .35rem 1rem; }
+    .mark { font-size: 1.2rem; }
+    .top nav { gap: .85rem; font-size: .78rem; }
+  }
 
   /* ---------- hero ---------- */
   .hero { position: relative; text-align: center; padding: clamp(2.5rem, 7vw, 5rem) 0 clamp(3rem, 8vw, 6rem); overflow: hidden; }
@@ -260,6 +267,7 @@
     <a class="mark" href="#top">web<b>smith</b></a>
     <nav>
       <a href="#services">Services</a>
+      <a href="#discord">Discord</a>
       <a href="#work">Work</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -275,7 +283,7 @@
     <p class="lede">Hand-built websites you actually own &mdash; and the practical security work
        that keeps them, and you, out of trouble.</p>
     <div class="cta-row">
-      <a class="btn" href="mailto:doug.l.copeland@gmail.com?subject=Websmith%20inquiry">Start a conversation</a>
+      <a class="btn" href="mailto:dugcanlift@gmail.com?subject=Websmith%20inquiry">Start a conversation</a>
       <a class="btn ghost" href="#work">See the work</a>
     </div>
   </div>
@@ -325,6 +333,55 @@
 
     <p class="caveat">Security work reduces risk; it does not eliminate it. You'll get a straight answer
        about what each change protects against and what it doesn't.</p>
+  </div>
+</section>
+
+<section id="discord">
+  <div class="wrap">
+    <p class="eyebrow">Discord</p>
+    <h2>Servers built, and looked after</h2>
+    <p class="section-lede">For a lot of churches, non-profits, and small communities, Discord is where
+       people actually talk. It usually gets set up in an afternoon by a volunteer and then never
+       touched again &mdash; which is how it becomes both a maze and a liability. The same two halves apply.</p>
+
+    <div class="services">
+      <div class="card">
+        <h3>Build &amp; redesign</h3>
+        <p class="card-lede">A server someone can navigate on their first visit.</p>
+        <ul>
+          <li><strong>Channel and category structure</strong> that matches how your group actually works
+              &mdash; not forty channels nobody reads.</li>
+          <li><strong>Roles and permissions designed deliberately.</strong> Who can see what, who can post
+              where, and a written reason for each.</li>
+          <li><strong>Onboarding, rules, and verification gates</strong> so a new member knows what to do in
+              the first thirty seconds.</li>
+          <li><strong>Branding that matches your presence:</strong> icon, banner, colors, and channel naming
+              consistent with your website.</li>
+          <li><strong>Bots chosen for what you need</strong> and configured properly &mdash; not fifteen
+              overlapping ones nobody remembers adding.</li>
+          <li><strong>Cleanup or migration</strong> of an existing server without losing history.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Management</h3>
+        <p class="card-lede">Someone paying attention after launch.</p>
+        <ul>
+          <li><strong>Moderation setup:</strong> auto-moderation, slow modes, and raid and spam protection
+              configured before you need them.</li>
+          <li><strong>Permission audits.</strong> The most common Discord failure is a role that quietly
+              grants far more than anyone intended.</li>
+          <li><strong>Scam and phishing filtering</strong> aimed at the link and direct-message scams that
+              target community members.</li>
+          <li><strong>A written moderator playbook</strong> so volunteers handle problems consistently
+              instead of improvising.</li>
+          <li><strong>Announcement, event, and role-assignment workflows</strong> that run without you
+              being online.</li>
+          <li><strong>Ongoing management</strong> &mdash; or a handoff and training, if you'd rather run
+              it yourself.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -430,8 +487,8 @@
     <p class="eyebrow">Get in touch</p>
     <h2>Start a conversation</h2>
     <p>Describe what you've got and what's not working. A few sentences is plenty.</p>
-    <a class="btn" href="mailto:doug.l.copeland@gmail.com?subject=Websmith%20inquiry">Email Websmith</a>
-    <a class="mail" href="mailto:doug.l.copeland@gmail.com">doug.l.copeland@gmail.com</a>
+    <a class="btn" href="mailto:dugcanlift@gmail.com?subject=Websmith%20inquiry">Email Websmith</a>
+    <a class="mail" href="mailto:dugcanlift@gmail.com">dugcanlift@gmail.com</a>
   </div>
 </section>
 
@@ -441,7 +498,7 @@
   <div class="wrap">
     <p class="fine">Websmith &mdash; digital presence and defense for small organizations.</p>
     <nav>
-      <a href="mailto:doug.l.copeland@gmail.com">Email</a>
+      <a href="mailto:dugcanlift@gmail.com">Email</a>
       <a href="https://github.com/dougray">GitHub</a>
     </nav>
   </div>
