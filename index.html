@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Websmith &mdash; Digital Presence &amp; Defense for Small Organizations</title>
+<meta name="description" content="Websmith serves small business and non-profits with digital presence and defense: hand-built websites you own, plus the practical security work that keeps them safe.">
+<meta name="theme-color" content="#000000">
+
+<link rel="icon" href="assets/favicon.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Websmith">
+<meta property="og:description" content="Serving small business and non-profits with digital presence and defense.">
+<meta property="og:image" content="https://dougray.github.io/websmith/assets/og-card.jpg">
+<meta property="og:url" content="https://dougray.github.io/websmith/">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Websmith",
+  "description": "Web development and practical security for small businesses and non-profits.",
+  "url": "https://dougray.github.io/websmith/",
+  "email": "doug.l.copeland@gmail.com",
+  "image": "https://dougray.github.io/websmith/assets/og-card.jpg",
+  "areaServed": "US",
+  "knowsAbout": [
+    "Static website development",
+    "Domain and DNS configuration",
+    "Email authentication (SPF, DKIM, DMARC)",
+    "Website security hardening",
+    "Small business and non-profit technology"
+  ],
+  "sameAs": ["https://github.com/dougray"]
+}
+</script>
+
+<style>
+  :root {
+    --bg:        #000000;
+    --panel:     #0a1016;
+    --panel-2:   #0d151d;
+    --rule:      #1a2530;
+    --rule-soft: #131c25;
+    --ink:       #e9f1f6;
+    --ice:       #cbdde8;
+    --muted:     #8ea3b3;
+    --accent:    #3aa6d8;
+    --accent-lo: #1d5b7a;
+    --geo:  'Jost', 'Century Gothic', 'Avenir Next', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { width: min(1080px, 100% - 2.5rem); margin-inline: auto; }
+
+  a { color: var(--accent); }
+  a:hover { color: #6cc4ee; }
+
+  h1, h2, h3 { font-family: var(--geo); font-weight: 400; letter-spacing: .01em; line-height: 1.2; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: .72rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 1rem;
+  }
+
+  /* ---------- header ---------- */
+  header.top {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(0,0,0,.82);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .top .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; padding: .85rem 0;
+  }
+  .mark {
+    font-family: var(--geo); font-weight: 300; font-size: 1.35rem;
+    letter-spacing: .02em; color: var(--ice); text-decoration: none;
+  }
+  .mark b { font-weight: 300; color: var(--accent); }
+  .top nav { display: flex; gap: 1.5rem; font-size: .9rem; }
+  .top nav a { color: var(--muted); text-decoration: none; }
+  .top nav a:hover { color: var(--ink); }
+  @media (max-width: 560px) { .top nav { gap: 1rem; font-size: .82rem; } }
+
+  /* ---------- hero ---------- */
+  .hero { position: relative; text-align: center; padding: clamp(2.5rem, 7vw, 5rem) 0 clamp(3rem, 8vw, 6rem); overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; inset: -20% 0 auto 50%;
+    width: 900px; height: 900px; transform: translateX(-50%);
+    background: radial-gradient(closest-side, rgba(58,166,216,.13), transparent 70%);
+    pointer-events: none;
+  }
+  .hero > * { position: relative; }
+  /* The logo ships on a black plate; screen-blending over the black page
+     dissolves that plate so no square edge shows. */
+  .hero img {
+    display: block; width: min(460px, 82%); height: auto; margin: 0 auto 1.5rem;
+    mix-blend-mode: screen;
+  }
+  .hero h1 {
+    font-size: clamp(1.35rem, 3.6vw, 2rem);
+    font-weight: 300; max-width: 22ch; margin: 0 auto 1.1rem;
+    color: var(--ice);
+  }
+  .hero p.lede {
+    max-width: 56ch; margin: 0 auto 2rem; color: var(--muted);
+    font-size: clamp(1rem, 1.6vw, 1.1rem);
+  }
+  .cta-row { display: flex; flex-wrap: wrap; gap: .85rem; justify-content: center; }
+
+  .btn {
+    display: inline-block; padding: .7rem 1.5rem; border-radius: 4px;
+    font-family: var(--mono); font-size: .85rem; letter-spacing: .04em;
+    text-decoration: none; border: 1px solid var(--accent);
+    background: var(--accent); color: #00131d; font-weight: 500;
+  }
+  .btn:hover { background: #55b9e6; border-color: #55b9e6; color: #00131d; }
+  .btn.ghost { background: transparent; color: var(--accent); }
+  .btn.ghost:hover { background: rgba(58,166,216,.1); color: #6cc4ee; }
+
+  /* ---------- sections ---------- */
+  section { padding: clamp(3rem, 7vw, 5.5rem) 0; border-top: 1px solid var(--rule-soft); }
+  section > .wrap > h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 .75rem; }
+  .section-lede { max-width: 62ch; color: var(--muted); margin: 0 0 2.5rem; }
+
+  /* ---------- services ---------- */
+  .services { display: grid; gap: 1.25rem; grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 800px) { .services { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: clamp(1.4rem, 3vw, 2rem);
+  }
+  .card h3 {
+    font-family: var(--mono); font-size: .8rem; font-weight: 500;
+    letter-spacing: .2em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 .6rem;
+  }
+  .card .card-lede { color: var(--ice); margin: 0 0 1.25rem; font-family: var(--geo); font-size: 1.15rem; line-height: 1.4; }
+  .card ul { list-style: none; margin: 0; padding: 0; }
+  .card li {
+    position: relative; padding-left: 1.5rem; margin-bottom: .9rem;
+    color: var(--muted); font-size: .95rem;
+  }
+  .card li:last-child { margin-bottom: 0; }
+  .card li::before {
+    content: ""; position: absolute; left: 0; top: .62em;
+    width: 7px; height: 7px; border: 1px solid var(--accent);
+    background: rgba(58,166,216,.25);
+  }
+  .card li strong { color: var(--ink); font-weight: 500; }
+
+  .caveat {
+    margin: 1.75rem 0 0; padding: .9rem 1.1rem;
+    border-left: 2px solid var(--accent-lo);
+    background: rgba(58,166,216,.05);
+    color: var(--muted); font-size: .9rem;
+  }
+
+  /* ---------- audience ---------- */
+  .chips { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.75rem; }
+  .chip {
+    font-family: var(--mono); font-size: .8rem;
+    padding: .4rem .9rem; border: 1px solid var(--rule);
+    border-radius: 100px; color: var(--ice); background: var(--panel);
+  }
+  .pull {
+    font-family: var(--geo); font-weight: 300;
+    font-size: clamp(1.1rem, 2.4vw, 1.45rem); line-height: 1.5;
+    max-width: 46ch; color: var(--ice); margin: 0;
+    border-left: 2px solid var(--accent); padding-left: 1.25rem;
+  }
+
+  /* ---------- work ---------- */
+  .work { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); }
+  .work a.item {
+    display: block; text-decoration: none; color: inherit;
+    background: var(--panel); border: 1px solid var(--rule);
+    border-radius: 8px; padding: 1.4rem;
+  }
+  .work a.item:hover { border-color: var(--accent-lo); background: var(--panel-2); }
+  .work h3 { font-size: 1.15rem; margin: 0 0 .5rem; color: var(--ink); font-weight: 400; }
+  .work p { margin: 0 0 1rem; color: var(--muted); font-size: .92rem; line-height: 1.55; }
+  .work .visit { font-family: var(--mono); font-size: .75rem; letter-spacing: .08em; color: var(--accent); }
+
+  /* ---------- approach ---------- */
+  .approach { display: grid; gap: 1.75rem 2rem; grid-template-columns: repeat(auto-fit, minmax(205px, 1fr)); }
+  .approach h3 {
+    font-family: var(--mono); font-size: .78rem; font-weight: 500;
+    letter-spacing: .16em; text-transform: uppercase; color: var(--accent);
+    margin: 0 0 .5rem; padding-top: .9rem; border-top: 1px solid var(--rule);
+  }
+  .approach p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+  /* ---------- pricing + contact ---------- */
+  .panel-wide {
+    background: var(--panel); border: 1px solid var(--rule);
+    border-radius: 8px; padding: clamp(1.5rem, 4vw, 2.5rem);
+  }
+  .panel-wide p { color: var(--muted); max-width: 62ch; }
+  .panel-wide p:last-child { margin-bottom: 0; }
+
+  .contact { text-align: center; }
+  .contact h2 { font-size: clamp(1.6rem, 3.4vw, 2.2rem); }
+  .contact p { color: var(--muted); max-width: 48ch; margin: 0 auto 2rem; }
+  .mail {
+    display: block; margin-top: 1.5rem;
+    font-family: var(--mono); font-size: .85rem; color: var(--muted);
+  }
+
+  /* ---------- footer ---------- */
+  footer {
+    border-top: 1px solid var(--rule-soft);
+    padding: 2.5rem 0 3rem; color: var(--muted); font-size: .85rem;
+  }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 1rem 2rem; justify-content: space-between; align-items: center; }
+  footer .fine { margin: 0; }
+  footer nav { display: flex; gap: 1.5rem; }
+  footer a { text-decoration: none; }
+
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top">web<b>smith</b></a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero">
+  <div class="wrap">
+    <img src="assets/websmith-logo.webp" alt="Websmith" width="460" height="460" fetchpriority="high">
+    <h1>Serving small business and non-profits with digital presence and defense.</h1>
+    <p class="lede">Hand-built websites you actually own &mdash; and the practical security work
+       that keeps them, and you, out of trouble.</p>
+    <div class="cta-row">
+      <a class="btn" href="mailto:doug.l.copeland@gmail.com?subject=Websmith%20inquiry">Start a conversation</a>
+      <a class="btn ghost" href="#work">See the work</a>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <p class="eyebrow">What I do</p>
+    <h2>Two halves of the same job</h2>
+    <p class="section-lede">A website nobody can find isn't presence. A website anyone can take over
+       isn't defense. Small organizations need both, and are usually sold neither.</p>
+
+    <div class="services">
+      <div class="card">
+        <h3>Presence</h3>
+        <p class="card-lede">Getting you found, and making the first impression count.</p>
+        <ul>
+          <li><strong>Hand-built sites.</strong> One page or several, written by hand &mdash; no page-builder
+              bloat, no template shared with ten thousand other organizations.</li>
+          <li><strong>Domain and DNS</strong> registered in your name and configured correctly the first time.</li>
+          <li><strong>Mobile-first and accessible.</strong> Readable on a phone, in the sun, in a parking lot.</li>
+          <li><strong>Local search.</strong> Google Business Profile, maps, and directory listings, so people
+              searching for you actually find you.</li>
+          <li><strong>Hosting that costs nothing to run.</strong> Static sites need no server, no database,
+              and no monthly platform fee.</li>
+          <li><strong>A plain-language handoff</strong> so you can edit your own content afterward.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Defense</h3>
+        <p class="card-lede">Closing the doors small organizations usually leave open.</p>
+        <ul>
+          <li><strong>Email authentication.</strong> SPF, DKIM, and DMARC, so your mail reaches inboxes
+              and nobody can send fundraising appeals in your name.</li>
+          <li><strong>HTTPS end to end</strong> with valid certificates and no mixed-content warnings.</li>
+          <li><strong>Account hardening.</strong> Multi-factor where it counts, no shared passwords,
+              no single person holding every key.</li>
+          <li><strong>Backups that have been restored</strong> at least once &mdash; not merely scheduled.</li>
+          <li><strong>Phishing and donation-fraud awareness</strong> for staff and volunteers, aimed at the
+              scams that actually target organizations your size.</li>
+          <li><strong>A written inventory</strong> of domains, registrars, logins, and renewal dates, so
+              nothing walks out the door when a volunteer moves away.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="caveat">Security work reduces risk; it does not eliminate it. You'll get a straight answer
+       about what each change protects against and what it doesn't.</p>
+  </div>
+</section>
+
+<section id="who">
+  <div class="wrap">
+    <p class="eyebrow">Who it's for</p>
+    <p class="pull">If you've been quoted five figures for a brochure website &mdash; or your entire
+       online presence is a Facebook page a member's cousin set up in 2016 and nobody has the password
+       to &mdash; that's the gap I work in.</p>
+    <div class="chips">
+      <span class="chip">Churches &amp; ministries</span>
+      <span class="chip">Non-profits &amp; volunteer orgs</span>
+      <span class="chip">Sole proprietors &amp; trades</span>
+      <span class="chip">Small shops &amp; studios</span>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <p class="eyebrow">Selected work</p>
+    <h2>Sites built and running</h2>
+    <p class="section-lede">Every one of these is a static site: no database, no plugins to patch,
+       nothing to break at two in the morning.</p>
+
+    <div class="work">
+      <a class="item" href="https://dougray.github.io/kmc-church/">
+        <h3>Kingsbury Methodist Church</h3>
+        <p>One-page site for a rural Texas congregation. Service times, location, and contact,
+           legible on any phone. No build step, no JavaScript.</p>
+        <span class="visit">VISIT &rarr;</span>
+      </a>
+
+      <a class="item" href="https://dougray.github.io/concafe-ministries/">
+        <h3>ConCafe Ministries</h3>
+        <p>A searchable archive of 1,400+ devotional podcast episodes, refreshed automatically
+           from the show's RSS feed.</p>
+        <span class="visit">VISIT &rarr;</span>
+      </a>
+
+      <a class="item" href="https://dougray.github.io/aaronrea-site/">
+        <h3>Aaron Rea</h3>
+        <p>Professional one-pager for a cloud security and infrastructure engineer &mdash; a r&eacute;sum&eacute;
+           that survives being opened on a recruiter's phone.</p>
+        <span class="visit">VISIT &rarr;</span>
+      </a>
+
+      <a class="item" href="https://www.dugcanlift.com/">
+        <h3>DugCanLift</h3>
+        <p>Site and app pages for a privacy-first fitness tracker: no accounts, no ads,
+           no analytics, all data on the device.</p>
+        <span class="visit">VISIT &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <p class="eyebrow">How I work</p>
+    <h2>Fewer moving parts, fewer problems</h2>
+    <div class="approach">
+      <div>
+        <h3>Static first</h3>
+        <p>A site with no database and no plugins has almost nothing to attack and nothing to
+           patch. It also loads instantly on a bad rural connection.</p>
+      </div>
+      <div>
+        <h3>You own it</h3>
+        <p>Domain, files, repository, and accounts are all registered to you. If we part ways,
+           you lose nothing and take everything with you.</p>
+      </div>
+      <div>
+        <h3>No rent</h3>
+        <p>Hosting a site like these is free or close to it. You shouldn't pay a subscription
+           to keep your own front door open.</p>
+      </div>
+      <div>
+        <h3>Plain language</h3>
+        <p>You get a written record of what was done and what to do next, in words you can hand
+           to a board, a pastor, or a new volunteer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <p class="eyebrow">Pricing</p>
+    <div class="panel-wide">
+      <h2 style="margin-top:0">Quoted per job</h2>
+      <p>Every organization starts from a different place. Some need a first website. Some need a
+         rescue. Some just need their email to stop landing in spam. Pricing depends entirely on
+         what the job actually requires.</p>
+      <p>Tell me what you have and what isn't working, and you'll get a flat number before any work
+         begins &mdash; no hourly surprises. Non-profits and ministries get non-profit rates.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <p class="eyebrow">Get in touch</p>
+    <h2>Start a conversation</h2>
+    <p>Describe what you've got and what's not working. A few sentences is plenty.</p>
+    <a class="btn" href="mailto:doug.l.copeland@gmail.com?subject=Websmith%20inquiry">Email Websmith</a>
+    <a class="mail" href="mailto:doug.l.copeland@gmail.com">doug.l.copeland@gmail.com</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="fine">Websmith &mdash; digital presence and defense for small organizations.</p>
+    <nav>
+      <a href="mailto:doug.l.copeland@gmail.com">Email</a>
+      <a href="https://github.com/dougray">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
