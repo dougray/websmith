@@ -26,7 +26,7 @@ assets/
 Open `index.html` and edit the text directly. Commit to `main` and GitHub Pages
 redeploys within a minute or two.
 
-The contact address (`dugcanlift@gmail.com`) appears in five places — both
+The contact address (`websmithtx@gmail.com`) appears in five places — both
 call-to-action buttons, the plain-text link under the contact button, the footer,
 and the JSON-LD block near the top of the file. Update all of them together.
 
