@@ -13,8 +13,8 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Websmith">
 <meta property="og:description" content="Serving small business and non-profits with digital presence and defense.">
-<meta property="og:image" content="https://dougray.github.io/websmith/assets/og-card.jpg">
-<meta property="og:url" content="https://dougray.github.io/websmith/">
+<meta property="og:image" content="https://websmithtx.com/assets/og-card.jpg">
+<meta property="og:url" content="https://websmithtx.com/">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -28,9 +28,9 @@
   "@type": "ProfessionalService",
   "name": "Websmith",
   "description": "Web development and practical security for small businesses and non-profits.",
-  "url": "https://dougray.github.io/websmith/",
+  "url": "https://websmithtx.com/",
   "email": "websmithtx@gmail.com",
-  "image": "https://dougray.github.io/websmith/assets/og-card.jpg",
+  "image": "https://websmithtx.com/assets/og-card.jpg",
   "areaServed": "US",
   "knowsAbout": [
     "Static website development",
@@ -211,7 +211,9 @@
   }
 
   /* ---------- work ---------- */
-  .work { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); }
+  /* 300px caps the grid at three columns in the 1080 wrap, so five cards
+     sit 3 + 2 rather than 4 + 1 with an orphan. */
+  .work { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
   .work a.item {
     display: block; text-decoration: none; color: inherit;
     background: var(--panel); border: 1px solid var(--rule);
@@ -419,6 +421,20 @@
         <h3>ConCafe Ministries</h3>
         <p>A searchable archive of 1,400+ devotional podcast episodes, refreshed automatically
            from the show's RSS feed.</p>
+        <span class="visit">VISIT &rarr;</span>
+      </a>
+
+      <a class="item" href="https://dougray.github.io/longhorn-lockpicking/">
+        <h3>Longhorn Lockpicking Club</h3>
+        <p>Austin's locksport club, meeting since 2006. The meeting calendar rebuilds
+           itself from the club's Meetup feed, so nobody has to remember to update it.</p>
+        <span class="visit">VISIT &rarr;</span>
+      </a>
+
+      <a class="item" href="https://dougray.github.io/alamo-city-locksport/">
+        <h3>Alamo City Locksport</h3>
+        <p>San Antonio's TOOOL affiliate. Monthly meetups and Wednesday sessions,
+           with the same self-updating calendar behind it.</p>
         <span class="visit">VISIT &rarr;</span>
       </a>
 
