@@ -2,7 +2,7 @@
 
 Site for **Websmith** — serving small business and non-profits with digital presence and defense.
 
-**Live site:** https://dougray.github.io/websmith/
+**Live site:** https://websmithtx.com/
 
 ## Structure
 
@@ -30,9 +30,10 @@ The contact address (`websmithtx@gmail.com`) appears in five places — both
 call-to-action buttons, the plain-text link under the contact button, the footer,
 and the JSON-LD block near the top of the file. Update all of them together.
 
-The absolute URLs in the `og:` meta tags and the JSON-LD assume
-`dougray.github.io/websmith/`. If a custom domain is added later, add a `CNAME`
-file and update those URLs.
+The absolute URLs in the `og:` meta tags and the JSON-LD point at
+`websmithtx.com`, which is the canonical host — `CNAME` holds the domain and
+must stay in place, since deleting it drops the custom domain on the next build.
+`dougray.github.io/websmith/` still resolves, but nothing should link to it.
 
 ## Regenerating image assets
 
